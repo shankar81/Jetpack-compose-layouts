@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeLayouts">
         <activity
+            android:name=".ConstraintLayoutDemo"
+            android:exported="true"
+            android:label="@string/title_activity_constraint_layout"
+            android:theme="@style/Theme.ComposeLayouts.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".CustomLayouts"
             android:exported="true"
             android:label="@string/title_activity_custom_layouts"

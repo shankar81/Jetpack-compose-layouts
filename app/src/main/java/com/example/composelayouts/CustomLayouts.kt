@@ -15,11 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.composelayouts.ui.theme.ComposeLayoutsTheme
-import com.google.android.material.chip.Chip
 
 val topics = listOf(
     "Arts & Crafts", "Beauty", "Books", "Business", "Comics", "Culinary",
@@ -35,7 +33,7 @@ class CustomLayouts : AppCompatActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     Row(modifier = Modifier.horizontalScroll(rememberScrollState())) {
-                        StaggeredGrid {
+                        StaggeredGrid(rows = 5) {
                             for (topic in topics) {
                                 Chip(Modifier.padding(8.dp), text = topic)
                             }
@@ -92,7 +90,7 @@ fun StaggeredGrid(
 
             val row = index % rows
             rowWidths[row] += placeable.width
-            rowMaxHeights[row] = Math.max(rowMaxHeights[row], placeable.height)
+            rowMaxHeights[row] = kotlin.math.max(rowMaxHeights[row], placeable.height)
 
             placeable
         }
